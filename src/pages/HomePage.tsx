@@ -168,9 +168,8 @@ export default function HomePage() {
               >
                 <div>
                   <div
-                    className={`w-14 h-14 rounded-2xl text-brand-crimson flex items-center justify-center text-2xl mb-6 shadow-sm ${
-                      index % 2 === 0 ? 'bg-brand-crimsonSoft' : 'bg-brand-slateSoft'
-                    }`}
+                    className={`w-14 h-14 rounded-2xl text-brand-crimson flex items-center justify-center text-2xl mb-6 shadow-sm ${index % 2 === 0 ? 'bg-brand-crimsonSoft' : 'bg-brand-slateSoft'
+                      }`}
                   >
                     <i className={`fa-solid ${p.icon}`} />
                   </div>
@@ -199,9 +198,8 @@ export default function HomePage() {
             {VALUES.map((v, index) => (
               <div
                 key={v.title}
-                className={`p-4 rounded-2xl bg-brand-surface border border-slate-100 hover:border-brand-crimson hover:-translate-y-1 transition-all ${
-                  index === VALUES.length - 1 ? 'col-span-2 sm:col-span-1' : ''
-                }`}
+                className={`p-4 rounded-2xl bg-brand-surface border border-slate-100 hover:border-brand-crimson hover:-translate-y-1 transition-all ${index === VALUES.length - 1 ? 'col-span-2 sm:col-span-1' : ''
+                  }`}
               >
                 <div className="w-12 h-12 mx-auto rounded-xl bg-brand-crimsonSoft text-brand-crimson flex items-center justify-center text-xl mb-3">
                   <i className={`fa-solid ${v.icon}`} />
@@ -227,7 +225,7 @@ export default function HomePage() {
               <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
                 Desde la estimulación sensorio-motriz hasta la consolidación de competencias pre-laborales y sociales en
                 el programa de Tránsito a la Vida Adulta, nuestro equipo multidisciplinario guía a los estudiantes y sus
-                familias con vocación evangélica.
+                familias con vocación católica.
               </p>
               <div className="flex flex-wrap gap-4 pt-2 text-xs sm:text-sm text-rose-100 font-medium">
                 {LEVEL_FEATURES.map((f) => (
