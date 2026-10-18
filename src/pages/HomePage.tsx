@@ -225,7 +225,7 @@ export default function HomePage() {
               <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
                 Desde la estimulación sensorio-motriz hasta la consolidación de competencias pre-laborales y sociales en
                 el programa de Tránsito a la Vida Adulta, nuestro equipo multidisciplinario guía a los estudiantes y sus
-                familias con vocación católica.
+                familias con vocación evagelica.
               </p>
               <div className="flex flex-wrap gap-4 pt-2 text-xs sm:text-sm text-rose-100 font-medium">
                 {LEVEL_FEATURES.map((f) => (
