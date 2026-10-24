@@ -21,25 +21,46 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-brand-slateDeep via-brand-slateDark to-brand-slateDeep text-white overflow-hidden py-16 lg:py-24 border-b border-brand-slateDark">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#d01037_1px,transparent_1px)] [background-size:24px_24px]" />
-        <div className="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-brand-crimson/25 blur-3xl pointer-events-none" />
-        <div className="absolute -left-20 -top-20 w-96 h-96 rounded-full bg-brand-slate/30 blur-3xl pointer-events-none" />
+      <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50/60 text-slate-800 overflow-hidden py-16 lg:py-24 border-b border-slate-200/80">
+        <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#82071f_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
+        <div className="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-slate-200/60 blur-3xl pointer-events-none" />
+        <div className="absolute -left-20 -top-20 w-96 h-96 rounded-full bg-rose-200/35 blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-crimson/30 border border-brand-crimson/40 text-rose-100 text-xs md:text-sm font-semibold tracking-wide backdrop-blur-sm">
-                <i className="fa-solid fa-church text-brand-crimsonBright" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200/80 text-brand-crimsonDark text-xs md:text-sm font-semibold tracking-wide shadow-xs">
+                <i className="fa-solid fa-church text-brand-crimson" />
                 <span>Bajo la protección de la Virgen María • Peregrinos de Santo Toribio</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-[1.15]">
-                Preparamos para la{' '}
-                <span className="text-rose-200 underline decoration-brand-crimson decoration-wavy">Vida</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-800 tracking-tight leading-[1.15]">
+                PREPARAMOS{' '}
+                <span className="block text-slate-800">PARA</span>
+                <span className="block text-slate-800">
+                  LA{' '}
+                  <span className="relative inline-block text-brand-crimsonDark">
+                    VIDA
+                    <svg
+                      className="absolute -bottom-2.5 left-0 w-full h-3 text-brand-crimson overflow-visible"
+                      viewBox="0 0 100 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M2 6 Q 14 0, 26 6 T 50 6 T 74 6 T 98 6"
+                        stroke="currentColor"
+                        strokeWidth="3.2"
+                        strokeLinecap="round"
+                        fill="none"
+                      />
+                    </svg>
+                  </span>
+                </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-200 max-w-2xl leading-relaxed">
+              <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
                 Promovemos la pertenencia, la interdependencia positiva, el crecimiento emocional y la autonomía
                 funcional mediante adaptaciones Montessori, guiando a cada estudiante hacia una vida plena.
               </p>
@@ -48,7 +69,7 @@ export default function HomePage() {
                 <button
                   type="button"
                   onClick={() => navigate('/contacto')}
-                  className="w-full sm:w-auto px-7 py-3.5 bg-brand-crimson hover:bg-brand-crimsonDark text-white font-bold rounded-xl shadow-crimson hover:shadow-lg border border-brand-crimsonBright/30 transition-all duration-300 flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto px-7 py-3.5 bg-brand-crimson hover:bg-brand-crimsonDark text-white font-bold rounded-xl shadow-crimson hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   <span>Solicitar Informes &amp; Matrícula</span>
                   <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform" />
@@ -56,18 +77,18 @@ export default function HomePage() {
                 <button
                   type="button"
                   onClick={() => navigate('/galeria')}
-                  className="w-full sm:w-auto px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/20 backdrop-blur-sm transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-7 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-brand-crimson font-semibold rounded-xl border border-slate-300/80 shadow-xs hover:shadow-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <i className="fa-regular fa-images text-brand-crimsonBright" />
+                  <i className="fa-regular fa-image text-brand-crimson" />
                   <span>Conocer Nuestros Espacios</span>
                 </button>
               </div>
 
-              <div className="pt-6 grid grid-cols-3 gap-4 border-t border-white/15 text-left">
+              <div className="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200 text-left">
                 {HERO_HIGHLIGHTS.map((h) => (
                   <div key={h.value}>
-                    <div className="text-lg sm:text-xl font-bold text-brand-crimsonBright">{h.value}</div>
-                    <div className="text-xs text-slate-300">{h.label}</div>
+                    <div className="text-lg sm:text-xl font-bold text-brand-crimsonDark">{h.value}</div>
+                    <div className="text-xs text-slate-500 font-medium">{h.label}</div>
                   </div>
                 ))}
               </div>
@@ -75,7 +96,7 @@ export default function HomePage() {
 
             <div className="lg:col-span-5">
               <div className="relative mx-auto max-w-md lg:max-w-none">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 border-4 border-white ring-1 ring-slate-200/80">
                   <img
                     src={HERO_IMAGE}
                     alt="Alumnos en ambiente de estimulación y aprendizaje"
@@ -84,15 +105,15 @@ export default function HomePage() {
                       e.currentTarget.src = HERO_FALLBACK
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-slateDeep via-transparent to-transparent opacity-85" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg text-brand-text border border-white">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-brand-crimsonSoft text-brand-crimson flex items-center justify-center text-lg">
+                      <div className="w-10 h-10 rounded-xl bg-rose-50 text-brand-crimson flex items-center justify-center text-lg border border-rose-100">
                         <i className="fa-solid fa-hands-holding-child" />
                       </div>
                       <div>
-                        <div className="font-bold text-sm text-brand-slate">Faro de Esperanza Inclusiva</div>
-                        <div className="text-xs text-brand-textMuted">Formación inspirada en el amor de Cristo</div>
+                        <div className="font-bold text-sm text-slate-800">Faro de Esperanza Inclusiva</div>
+                        <div className="text-xs text-slate-500">Formación inspirada en el amor de Cristo</div>
                       </div>
                     </div>
                   </div>

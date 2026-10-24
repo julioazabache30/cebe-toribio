@@ -7,18 +7,18 @@ export function Header() {
   const closeMobile = () => setMobileOpen(false)
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" onClick={closeMobile} className="flex items-center gap-3.5 group text-left">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-crimson to-brand-slate flex items-center justify-center text-white shadow-md shadow-brand-crimson/25 group-hover:scale-105 transition-transform duration-300 border border-brand-crimsonBright/30">
+            <div className="w-12 h-12 rounded-xl bg-brand-crimson text-white flex items-center justify-center shadow-md shadow-brand-crimson/20 group-hover:scale-105 transition-transform duration-300 border border-brand-crimsonBright/30">
               <i className="fa-solid fa-graduation-cap text-2xl" />
             </div>
             <div>
-              <span className="block text-[11px] font-semibold tracking-wider uppercase text-brand-textMuted">
+              <span className="block text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-slate-500">
                 {SITE.fullName}
               </span>
-              <span className="block font-serif font-bold text-lg md:text-xl text-brand-slate tracking-tight leading-tight group-hover:text-brand-crimson transition-colors">
+              <span className="block font-serif font-bold text-lg md:text-xl text-brand-crimsonDeep tracking-tight leading-tight group-hover:text-brand-crimson transition-colors">
                 {SITE.name}
               </span>
             </div>
@@ -64,7 +64,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div id="mobile-menu" className="md:hidden border-t border-slate-200 bg-white shadow-xl animate-view-in">
+        <div id="mobile-menu" className="md:hidden border-t border-slate-200 bg-white shadow-xl animate-view-in text-brand-slate">
           <div className="px-4 pt-3 pb-5 space-y-2">
             {NAV_ITEMS.map((item) => (
               <NavLink
@@ -73,10 +73,10 @@ export function Header() {
                 end={item.path === '/'}
                 onClick={closeMobile}
                 className={({ isActive }) =>
-                  `w-full px-4 py-3 rounded-xl flex items-center justify-between ${
+                  `w-full px-4 py-3 rounded-xl flex items-center justify-between transition-colors ${
                     isActive
-                      ? 'font-bold bg-brand-crimsonSoft text-brand-crimson'
-                      : 'font-semibold text-brand-text hover:bg-brand-crimsonSoft'
+                      ? 'font-bold bg-brand-crimsonSoft text-brand-crimson shadow-xs'
+                      : 'font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-crimson'
                   }`
                 }
               >
@@ -85,11 +85,13 @@ export function Header() {
               </NavLink>
             ))}
           </div>
-          <div className="p-4 bg-slate-50 border-t border-slate-100 text-xs text-brand-textMuted">
-            <i className="fa-solid fa-phone mr-1 text-brand-crimson" /> {SITE.phoneShort}
+          <div className="p-4 bg-slate-50 border-t border-slate-100 text-xs text-brand-textMuted flex items-center justify-between">
+            <span><i className="fa-solid fa-phone mr-1 text-brand-crimson" /> {SITE.phoneShort}</span>
+            <span className="text-[11px] text-slate-400">Comunidad Católica</span>
           </div>
         </div>
       )}
     </header>
   )
 }
+

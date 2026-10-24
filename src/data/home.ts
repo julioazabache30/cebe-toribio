@@ -8,7 +8,6 @@ export const HERO_HIGHLIGHTS = [
 
 export const METRICS = [
   { value: 'PEP', title: 'Plan Personalizado', description: 'Seguimiento individualizado' },
-  { value: '3 Niveles', title: 'Oferta Formativa', description: 'Inicial, Primaria y Adulta' },
   { value: '100%', title: 'Escuela de Familias', description: 'Alianza hogar-colegio constante' },
   { value: '10', title: 'Alumnos por Aula', description: 'Atención docente personalizada' },
 ]
