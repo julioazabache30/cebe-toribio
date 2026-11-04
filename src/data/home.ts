@@ -1,15 +1,43 @@
 import type { IconCard } from '../types'
 
-export const HERO_HIGHLIGHTS = [
-  { value: 'DUA 3.0', label: 'Empoderamiento activo' },
-  { value: 'Montessori', label: 'Autonomía funcional' },
-  { value: '3 Niveles', label: 'Inicial, Primaria y Adulta' },
+export interface HeroHighlight {
+  icon: string
+  value: string
+  label: string
+}
+
+export const HERO_HIGHLIGHTS: HeroHighlight[] = [
+  { icon: 'fa-shapes', value: 'DUA 3.0', label: 'Empoderamiento activo' },
+  { icon: 'fa-puzzle-piece', value: 'Montessori', label: 'Autonomía funcional' },
+  { icon: 'fa-graduation-cap', value: '3 Niveles', label: 'Inicial, Primaria y Adulta' },
 ]
 
-export const METRICS = [
-  { value: 'PEP', title: 'Plan Personalizado', description: 'Seguimiento individualizado' },
-  { value: '100%', title: 'Escuela de Familias', description: 'Alianza hogar-colegio constante' },
-  { value: '10', title: 'Alumnos por Aula', description: 'Atención docente personalizada' },
+export interface MetricItem {
+  value: string
+  title: string
+  description: string
+  icon: string
+}
+
+export const METRICS: MetricItem[] = [
+  {
+    value: 'PEP',
+    title: 'Plan Personalizado',
+    description: 'Seguimiento individualizado adaptado a cada ritmo',
+    icon: 'fa-clipboard-user',
+  },
+  {
+    value: '100%',
+    title: 'Escuela de Familias',
+    description: 'Alianza hogar-colegio y acompañamiento continuo',
+    icon: 'fa-heart-circle-check',
+  },
+  {
+    value: '10',
+    title: 'Alumnos por Aula',
+    description: 'Atención docente personalizada y clima seguro',
+    icon: 'fa-users',
+  },
 ]
 
 export const MISSION =

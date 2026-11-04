@@ -14,7 +14,9 @@ export const NEWS_ITEMS: NewsItem[] = [
     summary:
       'La UCT firmó un nuevo convenio interinstitucional con la Promotora Educativa Virgen de la Puerta, que permitirá a nuestros estudiantes de Educación desarrollar sus prácticas en los colegios que agrupa esta institución.',
     image: UCT_IMAGE,
+
     imageLarge: UCT_IMAGE,
+
     paragraphs: [
       'La UCT firmó un nuevo convenio interinstitucional con la Promotora Educativa Virgen de la Puerta, que permitirá a nuestros estudiantes de Educación desarrollar sus prácticas en los colegios que agrupa esta institución. 👩🏻‍🏫',
       'Además, la plana docente y administrativa de los 4 colegios que impulsa la promotora podrán acceder a beneficios corporativos en los programas de maestrías y segundas especialidades que ofrece la Universidad Católica de Trujillo. 🙌🏻',

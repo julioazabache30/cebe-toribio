@@ -1,18 +1,6 @@
 import { SITE } from '../../data/site'
 
 export function TopBar() {
-  const handleDownloadHtml = () => {
-    const htmlContent = document.documentElement.outerHTML
-    const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'CEBE_Santo_Toribio.html'
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    URL.revokeObjectURL(url)
-  }
 
   return (
     <div className="bg-brand-lead text-slate-100 text-xs py-2 px-4 border-b border-brand-leadDark hidden md:block">

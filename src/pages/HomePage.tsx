@@ -84,13 +84,31 @@ export default function HomePage() {
                 </button>
               </div>
 
-              <div className="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200 text-left">
-                {HERO_HIGHLIGHTS.map((h) => (
-                  <div key={h.value}>
-                    <div className="text-lg sm:text-xl font-bold text-brand-crimsonDark">{h.value}</div>
-                    <div className="text-xs text-slate-500 font-medium">{h.label}</div>
-                  </div>
-                ))}
+              <div className="pt-6 border-t border-slate-200/90 text-left">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-crimson inline-block" />
+                  <span>Enfoque Pedagógico &amp; Metodología</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {HERO_HIGHLIGHTS.map((h) => (
+                    <div
+                      key={h.value}
+                      className="group p-3 rounded-xl bg-white/90 hover:bg-white border border-slate-200/90 hover:border-brand-crimson/30 hover:shadow-xs transition-all duration-200 flex items-center gap-3"
+                    >
+                      <div className="w-9 h-9 shrink-0 rounded-lg bg-rose-50 border border-rose-100 text-brand-crimson flex items-center justify-center text-sm group-hover:bg-brand-crimson group-hover:text-white transition-colors duration-200">
+                        <i className={`fa-solid ${h.icon}`} />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-sm font-bold text-slate-800 tracking-tight leading-snug group-hover:text-brand-crimsonDark transition-colors">
+                          {h.value}
+                        </div>
+                        <div className="text-xs text-slate-500 font-medium leading-snug truncate">
+                          {h.label}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -128,18 +146,35 @@ export default function HomePage() {
       </section>
 
       {/* Metrics */}
-      <section className="bg-white border-b border-slate-200 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          {METRICS.map((m) => (
-            <div
-              key={m.title}
-              className="p-4 rounded-2xl bg-brand-surface border border-slate-100 hover:border-brand-crimson/30 transition-colors"
-            >
-              <div className="text-2xl md:text-3xl font-extrabold text-brand-crimson mb-1">{m.value}</div>
-              <div className="text-xs md:text-sm font-semibold text-brand-slate uppercase tracking-wide">{m.title}</div>
-              <p className="text-xs text-brand-textMuted mt-1">{m.description}</p>
-            </div>
-          ))}
+      <section className="bg-slate-50/80 border-b border-slate-200/80 py-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-7">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200/80 text-brand-slate text-xs font-semibold uppercase tracking-wider shadow-2xs">
+              <i className="fa-solid fa-chart-simple text-brand-crimson" />
+              <span>Compromiso &amp; Excelencia Educativa</span>
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            {METRICS.map((m) => (
+              <div
+                key={m.title}
+                className="relative p-6 rounded-2xl bg-white border border-slate-200/80 shadow-custom hover:shadow-lg hover:border-brand-crimson/40 transition-all duration-300 group overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-crimson to-brand-crimsonBright opacity-85 group-hover:opacity-100 transition-opacity" />
+                <div className="w-11 h-11 mx-auto mb-3 rounded-xl bg-brand-surface border border-slate-100 text-brand-crimson flex items-center justify-center text-lg group-hover:scale-110 transition-transform duration-300">
+                  <i className={`fa-solid ${m.icon}`} />
+                </div>
+                <div className="text-3xl md:text-4xl font-extrabold text-brand-crimson mb-1.5 tracking-tight font-sans">
+                  {m.value}
+                </div>
+                <div className="text-xs md:text-sm font-bold text-slate-800 uppercase tracking-wide mb-1">
+                  {m.title}
+                </div>
+                <p className="text-xs text-slate-500 leading-relaxed">{m.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
