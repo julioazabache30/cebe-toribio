@@ -15,7 +15,7 @@ export function Reveal({
   children,
   variant = 'fade-up',
   delay = 0,
-  duration = 650,
+  duration = 2000,
   threshold = 0.12,
   once = true,
   className = '',
