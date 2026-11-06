@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { Reveal } from '../components/ui/Reveal'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import {
   HERO_HIGHLIGHTS,
@@ -29,90 +30,100 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200/80 text-brand-crimsonDark text-xs md:text-sm font-semibold tracking-wide shadow-xs">
-                <i className="fa-solid fa-church text-brand-crimson" />
-                <span>Bajo la protección de la Virgen María • Peregrinos de Santo Toribio</span>
-              </div>
+              <Reveal variant="fade-down" delay={0}>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200/80 text-brand-crimsonDark text-xs md:text-sm font-semibold tracking-wide shadow-xs">
+                  <i className="fa-solid fa-church text-brand-crimson" />
+                  <span>Bajo la protección de la Virgen María • Peregrinos de Santo Toribio</span>
+                </div>
+              </Reveal>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-800 tracking-tight leading-[1.15]">
-                PREPARAMOS{' '}
-                <span className="block text-slate-800">PARA</span>
-                <span className="block text-slate-800">
-                  LA{' '}
-                  <span className="relative inline-block text-brand-crimsonDark">
-                    VIDA
-                    <svg
-                      className="absolute -bottom-2.5 left-0 w-full h-3 text-brand-crimson overflow-visible"
-                      viewBox="0 0 100 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      preserveAspectRatio="none"
-                    >
-                      <path
-                        d="M2 6 Q 14 0, 26 6 T 50 6 T 74 6 T 98 6"
-                        stroke="currentColor"
-                        strokeWidth="3.2"
-                        strokeLinecap="round"
+              <Reveal variant="fade-up" delay={90}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-800 tracking-tight leading-[1.15]">
+                  PREPARAMOS{' '}
+                  <span className="block text-slate-800">PARA</span>
+                  <span className="block text-slate-800">
+                    LA{' '}
+                    <span className="relative inline-block text-brand-crimsonDark">
+                      VIDA
+                      <svg
+                        className="absolute -bottom-2.5 left-0 w-full h-3 text-brand-crimson overflow-visible"
+                        viewBox="0 0 100 12"
                         fill="none"
-                      />
-                    </svg>
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="none"
+                      >
+                        <path
+                          d="M2 6 Q 14 0, 26 6 T 50 6 T 74 6 T 98 6"
+                          stroke="currentColor"
+                          strokeWidth="3.2"
+                          strokeLinecap="round"
+                          fill="none"
+                        />
+                      </svg>
+                    </span>
                   </span>
-                </span>
-              </h1>
+                </h1>
+              </Reveal>
 
-              <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
-                Promovemos la pertenencia, la interdependencia positiva, el crecimiento emocional y la autonomía
-                funcional mediante adaptaciones Montessori, guiando a cada estudiante hacia una vida plena.
-              </p>
+              <Reveal variant="fade-up" delay={180}>
+                <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
+                  Promovemos la pertenencia, la interdependencia positiva, el crecimiento emocional y la autonomía
+                  funcional mediante adaptaciones Montessori, guiando a cada estudiante hacia una vida plena.
+                </p>
+              </Reveal>
 
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <button
-                  type="button"
-                  onClick={() => navigate('/contacto')}
-                  className="w-full sm:w-auto px-7 py-3.5 bg-brand-crimson hover:bg-brand-crimsonDark text-white font-bold rounded-xl shadow-crimson hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
-                >
-                  <span>Solicitar Informes &amp; Matrícula</span>
-                  <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => navigate('/galeria')}
-                  className="w-full sm:w-auto px-7 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-brand-crimson font-semibold rounded-xl border border-slate-300/80 shadow-xs hover:shadow-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <i className="fa-regular fa-image text-brand-crimson" />
-                  <span>Conocer Nuestros Espacios</span>
-                </button>
-              </div>
-
-              <div className="pt-6 border-t border-slate-200/90 text-left">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-crimson inline-block" />
-                  <span>Enfoque Pedagógico &amp; Metodología</span>
+              <Reveal variant="fade-up" delay={260}>
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                  <button
+                    type="button"
+                    onClick={() => navigate('/contacto')}
+                    className="w-full sm:w-auto px-7 py-3.5 bg-brand-crimson hover:bg-brand-crimsonDark text-white font-bold rounded-xl shadow-crimson hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
+                  >
+                    <span>Solicitar Informes &amp; Matrícula</span>
+                    <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => navigate('/galeria')}
+                    className="w-full sm:w-auto px-7 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-brand-crimson font-semibold rounded-xl border border-slate-300/80 shadow-xs hover:shadow-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <i className="fa-regular fa-image text-brand-crimson" />
+                    <span>Conocer Nuestros Espacios</span>
+                  </button>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {HERO_HIGHLIGHTS.map((h) => (
-                    <div
-                      key={h.value}
-                      className="group p-3 rounded-xl bg-white/90 hover:bg-white border border-slate-200/90 hover:border-brand-crimson/30 hover:shadow-xs transition-all duration-200 flex items-center gap-3"
-                    >
-                      <div className="w-9 h-9 shrink-0 rounded-lg bg-rose-50 border border-rose-100 text-brand-crimson flex items-center justify-center text-sm group-hover:bg-brand-crimson group-hover:text-white transition-colors duration-200">
-                        <i className={`fa-solid ${h.icon}`} />
-                      </div>
-                      <div className="min-w-0">
-                        <div className="text-sm font-bold text-slate-800 tracking-tight leading-snug group-hover:text-brand-crimsonDark transition-colors">
-                          {h.value}
+              </Reveal>
+
+              <Reveal variant="fade-up" delay={340}>
+                <div className="pt-6 border-t border-slate-200/90 text-left">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-crimson inline-block" />
+                    <span>Enfoque Pedagógico &amp; Metodología</span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {HERO_HIGHLIGHTS.map((h) => (
+                      <div
+                        key={h.value}
+                        className="group p-3 rounded-xl bg-white/90 hover:bg-white border border-slate-200/90 hover:border-brand-crimson/30 hover:shadow-xs transition-all duration-200 flex items-center gap-3"
+                      >
+                        <div className="w-9 h-9 shrink-0 rounded-lg bg-rose-50 border border-rose-100 text-brand-crimson flex items-center justify-center text-sm group-hover:bg-brand-crimson group-hover:text-white transition-colors duration-200">
+                          <i className={`fa-solid ${h.icon}`} />
                         </div>
-                        <div className="text-xs text-slate-500 font-medium leading-snug truncate">
-                          {h.label}
+                        <div className="min-w-0">
+                          <div className="text-sm font-bold text-slate-800 tracking-tight leading-snug group-hover:text-brand-crimsonDark transition-colors">
+                            {h.value}
+                          </div>
+                          <div className="text-xs text-slate-500 font-medium leading-snug truncate">
+                            {h.label}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             </div>
 
-            <div className="lg:col-span-5">
+            <Reveal variant="zoom-in" delay={150} className="lg:col-span-5">
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 border-4 border-white ring-1 ring-slate-200/80">
                   <img
@@ -140,7 +151,7 @@ export default function HomePage() {
                   <i className="fa-solid fa-heart" /> Vocación &amp; Fe
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -148,17 +159,19 @@ export default function HomePage() {
       {/* Metrics */}
       <section className="bg-slate-50/80 border-b border-slate-200/80 py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-7">
+          <Reveal variant="fade-up" className="text-center mb-7">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200/80 text-brand-slate text-xs font-semibold uppercase tracking-wider shadow-2xs">
               <i className="fa-solid fa-chart-simple text-brand-crimson" />
               <span>Compromiso &amp; Excelencia Educativa</span>
             </span>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            {METRICS.map((m) => (
-              <div
+            {METRICS.map((m, index) => (
+              <Reveal
                 key={m.title}
+                variant="fade-up"
+                delay={index * 120}
                 className="relative p-6 rounded-2xl bg-white border border-slate-200/80 shadow-custom hover:shadow-lg hover:border-brand-crimson/40 transition-all duration-300 group overflow-hidden"
               >
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-crimson to-brand-crimsonBright opacity-85 group-hover:opacity-100 transition-opacity" />
@@ -172,38 +185,42 @@ export default function HomePage() {
                   {m.title}
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed">{m.description}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-white border-b border-slate-200">
+      <section className="py-16 bg-white border-b border-slate-200 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <article className="bg-gradient-to-br from-brand-surface to-white p-8 rounded-3xl border border-slate-200 shadow-custom relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-crimson/5 rounded-bl-full pointer-events-none" />
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-crimsonSoft text-brand-crimson text-xs font-bold uppercase tracking-wider mb-4">
-              <i className="fa-solid fa-bullseye" /> Misión Institucional
-            </div>
-            <h3 className="text-2xl font-serif font-bold text-brand-slate mb-4">
-              Educación Personalizada y Desarrollo Integral
-            </h3>
-            <blockquote className="text-sm text-brand-textMuted leading-relaxed italic border-l-4 border-brand-crimson pl-4">
-              “{MISSION}”
-            </blockquote>
-          </article>
+          <Reveal variant="fade-right" delay={50} className="h-full">
+            <article className="h-full bg-gradient-to-br from-brand-surface to-white p-8 rounded-3xl border border-slate-200 shadow-custom relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-crimson/5 rounded-bl-full pointer-events-none" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-crimsonSoft text-brand-crimson text-xs font-bold uppercase tracking-wider mb-4">
+                <i className="fa-solid fa-bullseye" /> Misión Institucional
+              </div>
+              <h3 className="text-2xl font-serif font-bold text-brand-slate mb-4">
+                Educación Personalizada y Desarrollo Integral
+              </h3>
+              <blockquote className="text-sm text-brand-textMuted leading-relaxed italic border-l-4 border-brand-crimson pl-4">
+                “{MISSION}”
+              </blockquote>
+            </article>
+          </Reveal>
 
-          <article className="bg-gradient-to-br from-brand-slateDeep to-brand-slateDark text-white p-8 rounded-3xl border border-brand-slateDark shadow-custom-lg relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-crimson/15 rounded-bl-full pointer-events-none" />
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-rose-200 text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">
-              <i className="fa-solid fa-eye" /> Visión Institucional
-            </div>
-            <h3 className="text-2xl font-serif font-bold mb-4">Faro de Esperanza y Referente Inclusivo Católico</h3>
-            <blockquote className="text-sm text-slate-200 leading-relaxed italic border-l-4 border-brand-crimson pl-4">
-              “{VISION}”
-            </blockquote>
-          </article>
+          <Reveal variant="fade-left" delay={150} className="h-full">
+            <article className="h-full bg-gradient-to-br from-brand-slateDeep to-brand-slateDark text-white p-8 rounded-3xl border border-brand-slateDark shadow-custom-lg relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-crimson/15 rounded-bl-full pointer-events-none" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-rose-200 text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">
+                <i className="fa-solid fa-eye" /> Visión Institucional
+              </div>
+              <h3 className="text-2xl font-serif font-bold mb-4">Faro de Esperanza y Referente Inclusivo Católico</h3>
+              <blockquote className="text-sm text-slate-200 leading-relaxed italic border-l-4 border-brand-crimson pl-4">
+                “{VISION}”
+              </blockquote>
+            </article>
+          </Reveal>
         </div>
       </section>
 
@@ -218,14 +235,17 @@ export default function HomePage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {PILLARS.map((p, index) => (
-              <div
+              <Reveal
                 key={p.title}
+                variant="fade-up"
+                delay={index * 110}
                 className="bg-white rounded-2xl p-7 shadow-custom border border-slate-100 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div
-                    className={`w-14 h-14 rounded-2xl text-brand-crimson flex items-center justify-center text-2xl mb-6 shadow-sm ${index % 2 === 0 ? 'bg-brand-crimsonSoft' : 'bg-brand-slateSoft'
-                      }`}
+                    className={`w-14 h-14 rounded-2xl text-brand-crimson flex items-center justify-center text-2xl mb-6 shadow-sm ${
+                      index % 2 === 0 ? 'bg-brand-crimsonSoft' : 'bg-brand-slateSoft'
+                    }`}
                   >
                     <i className={`fa-solid ${p.icon}`} />
                   </div>
@@ -236,7 +256,7 @@ export default function HomePage() {
                   <span>{p.tag}</span>
                   <i className="fa-solid fa-check text-emerald-600 ml-auto" />
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -252,16 +272,19 @@ export default function HomePage() {
           />
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 text-center">
             {VALUES.map((v, index) => (
-              <div
+              <Reveal
                 key={v.title}
-                className={`p-4 rounded-2xl bg-brand-surface border border-slate-100 hover:border-brand-crimson hover:-translate-y-1 transition-all ${index === VALUES.length - 1 ? 'col-span-2 sm:col-span-1' : ''
-                  }`}
+                variant="zoom-in"
+                delay={index * 70}
+                className={`p-4 rounded-2xl bg-brand-surface border border-slate-100 hover:border-brand-crimson hover:-translate-y-1 transition-all ${
+                  index === VALUES.length - 1 ? 'col-span-2 sm:col-span-1' : ''
+                }`}
               >
                 <div className="w-12 h-12 mx-auto rounded-xl bg-brand-crimsonSoft text-brand-crimson flex items-center justify-center text-xl mb-3">
                   <i className={`fa-solid ${v.icon}`} />
                 </div>
                 <h4 className="font-bold text-sm text-brand-slate">{v.title}</h4>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -270,38 +293,40 @@ export default function HomePage() {
       {/* Levels banner */}
       <section className="py-16 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-brand-slateDeep via-brand-slateDark to-brand-slateDeep rounded-3xl p-8 sm:p-12 text-white shadow-custom-lg border border-brand-slateDark grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-4">
-              <span className="inline-block bg-brand-crimson text-xs font-extrabold uppercase px-3 py-1 rounded-md border border-brand-crimsonBright/30">
-                Nivel Inicial • Primaria • Tránsito a la Vida Adulta
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold leading-snug">
-                Acompañando cada etapa formativa hacia la autonomía plena
-              </h3>
-              <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
-                Desde la estimulación sensorio-motriz hasta la consolidación de competencias pre-laborales y sociales en
-                el programa de Tránsito a la Vida Adulta, nuestro equipo multidisciplinario guía a los estudiantes y sus
-                familias con vocación católica.
-              </p>
-              <div className="flex flex-wrap gap-4 pt-2 text-xs sm:text-sm text-rose-100 font-medium">
-                {LEVEL_FEATURES.map((f) => (
-                  <span key={f} className="flex items-center gap-1.5">
-                    <i className="fa-solid fa-circle-check text-brand-crimsonBright" /> {f}
-                  </span>
-                ))}
+          <Reveal variant="zoom-in">
+            <div className="bg-gradient-to-r from-brand-slateDeep via-brand-slateDark to-brand-slateDeep rounded-3xl p-8 sm:p-12 text-white shadow-custom-lg border border-brand-slateDark grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8 space-y-4">
+                <span className="inline-block bg-brand-crimson text-xs font-extrabold uppercase px-3 py-1 rounded-md border border-brand-crimsonBright/30">
+                  Nivel Inicial • Primaria • Tránsito a la Vida Adulta
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-serif font-bold leading-snug">
+                  Acompañando cada etapa formativa hacia la autonomía plena
+                </h3>
+                <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
+                  Desde la estimulación sensorio-motriz hasta la consolidación de competencias pre-laborales y sociales en
+                  el programa de Tránsito a la Vida Adulta, nuestro equipo multidisciplinario guía a los estudiantes y sus
+                  familias con vocación católica.
+                </p>
+                <div className="flex flex-wrap gap-4 pt-2 text-xs sm:text-sm text-rose-100 font-medium">
+                  {LEVEL_FEATURES.map((f) => (
+                    <span key={f} className="flex items-center gap-1.5">
+                      <i className="fa-solid fa-circle-check text-brand-crimsonBright" /> {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="lg:col-span-4 flex justify-center lg:justify-end">
+                <button
+                  type="button"
+                  onClick={() => navigate('/contacto')}
+                  className="px-8 py-4 bg-white text-brand-slate font-bold rounded-2xl hover:bg-brand-crimsonSoft hover:text-brand-crimson hover:shadow-xl transition-all duration-300 text-sm flex items-center gap-2"
+                >
+                  <i className="fa-solid fa-calendar-check text-brand-crimson" />
+                  <span>Agendar Visita Pedagógica</span>
+                </button>
               </div>
             </div>
-            <div className="lg:col-span-4 flex justify-center lg:justify-end">
-              <button
-                type="button"
-                onClick={() => navigate('/contacto')}
-                className="px-8 py-4 bg-white text-brand-slate font-bold rounded-2xl hover:bg-brand-crimsonSoft hover:text-brand-crimson hover:shadow-xl transition-all duration-300 text-sm flex items-center gap-2"
-              >
-                <i className="fa-solid fa-calendar-check text-brand-crimson" />
-                <span>Agendar Visita Pedagógica</span>
-              </button>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -310,16 +335,18 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading tag="Marco Normativo y Ético" title="Principios de Educación Especial" className="mb-14" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PRINCIPLES.map((p) => (
-              <div
+            {PRINCIPLES.map((p, index) => (
+              <Reveal
                 key={p.title}
+                variant="fade-up"
+                delay={index * 90}
                 className="p-6 rounded-2xl bg-brand-surface border border-slate-100 hover:border-brand-crimson/30 transition-colors"
               >
                 <h4 className="text-lg font-bold text-brand-slate mb-2 flex items-center gap-2">
                   <i className={`fa-solid ${p.icon} text-brand-crimson`} /> {p.title}
                 </h4>
                 <p className="text-sm text-brand-textMuted leading-relaxed">{p.description}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

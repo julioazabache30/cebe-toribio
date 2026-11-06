@@ -1,8 +1,11 @@
 import { useCallback, useState } from 'react'
 import { Modal, ModalCloseButton } from '../components/ui/Modal'
 import { PageHero } from '../components/ui/PageHero'
+import { Reveal } from '../components/ui/Reveal'
 import { NEWS_ITEMS } from '../data/news'
 import type { NewsItem } from '../types'
+
+const NEWS_FALLBACK_IMAGE = 'https://placehold.co/800x500/323840/ffffff?text=CEBE+Santo+Toribio'
 
 export default function NewsPage() {
   const [selected, setSelected] = useState<NewsItem | null>(null)
@@ -17,41 +20,48 @@ export default function NewsPage() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {NEWS_ITEMS.map((news) => (
-          <article
-            key={news.id}
-            className="bg-white rounded-2xl overflow-hidden shadow-custom border border-slate-100 flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-          >
-            <div>
-              <div className="relative h-48 overflow-hidden">
-                <img src={news.image} alt={news.title} loading="lazy" className="w-full h-full object-cover" />
-                <span
-                  className={`absolute top-3 left-3 text-white text-[11px] font-bold px-2.5 py-1 rounded-md border border-white/20 ${news.badgeClassName}`}
-                >
-                  {news.badge}
-                </span>
-              </div>
-              <div className="p-6">
-                <div className="text-xs text-brand-textMuted font-medium mb-2 flex items-center gap-1.5">
-                  <i className="fa-regular fa-calendar text-brand-crimson" /> {news.date}
+        {NEWS_ITEMS.map((news, index) => (
+          <Reveal key={news.id} variant="fade-up" delay={index * 120} className="h-full">
+            <article className="h-full bg-white rounded-2xl overflow-hidden shadow-custom border border-slate-100 flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <div>
+                <div className="relative h-48 overflow-hidden bg-slate-100">
+                  <img
+                    src={news.image}
+                    alt={news.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = NEWS_FALLBACK_IMAGE
+                    }}
+                  />
+                  <span
+                    className={`absolute top-3 left-3 text-white text-[11px] font-bold px-2.5 py-1 rounded-md border border-white/20 ${news.badgeClassName}`}
+                  >
+                    {news.badge}
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-brand-slate mb-2 line-clamp-2 hover:text-brand-crimson transition-colors">
-                  {news.title}
-                </h3>
-                <p className="text-sm text-brand-textMuted line-clamp-3 leading-relaxed mb-4">{news.summary}</p>
+                <div className="p-6">
+                  <div className="text-xs text-brand-textMuted font-medium mb-2 flex items-center gap-1.5">
+                    <i className="fa-regular fa-calendar text-brand-crimson" /> {news.date}
+                  </div>
+                  <h3 className="text-lg font-bold text-brand-slate mb-2 line-clamp-2 hover:text-brand-crimson transition-colors">
+                    {news.title}
+                  </h3>
+                  <p className="text-sm text-brand-textMuted line-clamp-3 leading-relaxed mb-4">{news.summary}</p>
+                </div>
               </div>
-            </div>
-            <div className="px-6 pb-6">
-              <button
-                type="button"
-                onClick={() => setSelected(news)}
-                className="w-full py-2.5 rounded-xl border border-brand-crimson text-brand-crimson font-semibold text-xs hover:bg-brand-crimson hover:text-white transition-colors flex items-center justify-center gap-2"
-              >
-                <span>Leer nota completa</span>
-                <i className="fa-solid fa-arrow-right text-[10px]" />
-              </button>
-            </div>
-          </article>
+              <div className="px-6 pb-6">
+                <button
+                  type="button"
+                  onClick={() => setSelected(news)}
+                  className="w-full py-2.5 rounded-xl border border-brand-crimson text-brand-crimson font-semibold text-xs hover:bg-brand-crimson hover:text-white transition-colors flex items-center justify-center gap-2"
+                >
+                  <span>Leer nota completa</span>
+                  <i className="fa-solid fa-arrow-right text-[10px]" />
+                </button>
+              </div>
+            </article>
+          </Reveal>
         ))}
       </div>
 
@@ -59,7 +69,14 @@ export default function NewsPage() {
         {selected && (
           <div className="relative max-w-2xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col">
             <div className="relative h-64 bg-slate-900 shrink-0">
-              <img src={selected.imageLarge} alt={selected.title} className="w-full h-full object-cover opacity-90" />
+              <img
+                src={selected.imageLarge}
+                alt={selected.title}
+                className="w-full h-full object-cover opacity-90"
+                onError={(e) => {
+                  e.currentTarget.src = NEWS_FALLBACK_IMAGE
+                }}
+              />
               <ModalCloseButton onClick={closeModal} />
               <span className="absolute bottom-4 left-6 bg-brand-crimson text-white text-xs font-bold px-3 py-1 rounded-md border border-white/20">
                 {selected.badge}

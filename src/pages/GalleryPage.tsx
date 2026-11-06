@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react'
 import { Modal, ModalCloseButton } from '../components/ui/Modal'
 import { PageHero } from '../components/ui/PageHero'
+import { Reveal } from '../components/ui/Reveal'
 import { GALLERY_FILTERS, GALLERY_ITEMS } from '../data/gallery'
 import type { GalleryCategory, GalleryItem } from '../types'
 
@@ -23,65 +24,68 @@ export default function GalleryPage() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10" role="tablist">
-          {GALLERY_FILTERS.map((f) => {
-            const active = f.value === filter
-            return (
-              <button
-                key={f.value}
-                type="button"
-                role="tab"
-                aria-selected={active}
-                onClick={() => setFilter(f.value)}
-                className={`px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all duration-200 border ${
-                  active
-                    ? 'bg-brand-crimson text-white border-brand-crimson shadow-sm'
-                    : 'bg-white text-slate-600 hover:bg-slate-100 border-slate-200'
-                }`}
-              >
-                {f.label}
-              </button>
-            )
-          })}
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visibleItems.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => setSelected(item)}
-              className="group text-left relative rounded-2xl overflow-hidden shadow-custom bg-white border border-slate-100 animate-view-in focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-crimson"
-            >
-              <div className="overflow-hidden aspect-video relative">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-brand-slateDeep/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="w-12 h-12 rounded-full bg-brand-crimson text-white flex items-center justify-center text-lg shadow-lg">
-                    <i className="fa-solid fa-magnifying-glass-plus" />
-                  </span>
-                </div>
-              </div>
-              <div className="p-4">
-                <span
-                  className={`text-[11px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider ${
-                    item.accent === 'crimson'
-                      ? 'text-brand-crimson bg-brand-crimsonSoft'
-                      : 'text-brand-slate bg-brand-slateSoft'
+        <Reveal variant="fade-up" delay={120}>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10" role="tablist">
+            {GALLERY_FILTERS.map((f) => {
+              const active = f.value === filter
+              return (
+                <button
+                  key={f.value}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => setFilter(f.value)}
+                  className={`px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all duration-200 border ${
+                    active
+                      ? 'bg-brand-crimson text-white border-brand-crimson shadow-sm'
+                      : 'bg-white text-slate-600 hover:bg-slate-100 border-slate-200'
                   }`}
                 >
-                  {item.label}
-                </span>
-                <h3 className="font-bold text-brand-slate text-base mt-2 group-hover:text-brand-crimson transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-brand-textMuted mt-1 line-clamp-2">{item.description}</p>
-              </div>
-            </button>
+                  {f.label}
+                </button>
+              )
+            })}
+          </div>
+        </Reveal>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {visibleItems.map((item, index) => (
+            <Reveal key={`${filter}-${item.id}`} variant="fade-up" delay={(index % 6) * 100}>
+              <button
+                type="button"
+                onClick={() => setSelected(item)}
+                className="w-full h-full group text-left relative rounded-2xl overflow-hidden shadow-custom bg-white border border-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-crimson"
+              >
+                <div className="overflow-hidden aspect-video relative">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-brand-slateDeep/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="w-12 h-12 rounded-full bg-brand-crimson text-white flex items-center justify-center text-lg shadow-lg">
+                      <i className="fa-solid fa-magnifying-glass-plus" />
+                    </span>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <span
+                    className={`text-[11px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider ${
+                      item.accent === 'crimson'
+                        ? 'text-brand-crimson bg-brand-crimsonSoft'
+                        : 'text-brand-slate bg-brand-slateSoft'
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                  <h3 className="font-bold text-brand-slate text-base mt-2 group-hover:text-brand-crimson transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-brand-textMuted mt-1 line-clamp-2">{item.description}</p>
+                </div>
+              </button>
+            </Reveal>
           ))}
         </div>
       </div>

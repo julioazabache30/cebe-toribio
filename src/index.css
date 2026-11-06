@@ -65,3 +65,43 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #a80c2b;
 }
+
+.reveal-item {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-fade-up {
+  transform: translate3d(0, 28px, 0);
+}
+
+.reveal-fade-down {
+  transform: translate3d(0, -24px, 0);
+}
+
+.reveal-fade-left {
+  transform: translate3d(32px, 0, 0);
+}
+
+.reveal-fade-right {
+  transform: translate3d(-32px, 0, 0);
+}
+
+.reveal-zoom-in {
+  transform: scale3d(0.94, 0.94, 1);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
