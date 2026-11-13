@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type HTMLAttributes, type ReactNode } from 'react'
+import { ANIMATION_CONFIG } from '../../config/animations'
 
 export type RevealVariant = 'fade-up' | 'fade-down' | 'fade-left' | 'fade-right' | 'zoom-in'
 
@@ -15,8 +16,8 @@ export function Reveal({
   children,
   variant = 'fade-up',
   delay = 0,
-  duration = 2000,
-  threshold = 0.12,
+  duration = ANIMATION_CONFIG.defaultDuration,
+  threshold = ANIMATION_CONFIG.defaultThreshold,
   once = true,
   className = '',
   style,
@@ -50,7 +51,7 @@ export function Reveal({
       ref={ref}
       className={`reveal-item reveal-${variant} ${visible ? 'is-visible' : ''} ${className}`.trim()}
       style={{
-        transitionDelay: `${delay}ms`,
+        transitionDelay: `${ANIMATION_CONFIG.baseDelay + delay}ms`,
         transitionDuration: `${duration}ms`,
         ...style,
       }}
