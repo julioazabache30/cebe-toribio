@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import { useModalBehavior } from '../../hooks/useModalBehavior'
 
 interface ModalProps {
@@ -14,18 +15,21 @@ export function Modal({ open, onClose, labelledBy, overlayClassName = 'bg-black/
 
   if (!open) return null
 
-  return (
+  // Rendered in document.body so ancestors with transform/animation
+  // cannot break the fixed positioning relative to the viewport.
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
       aria-labelledby={labelledBy}
-      className={`fixed inset-0 z-50 backdrop-blur-sm flex items-center justify-center p-4 animate-view-in ${overlayClassName}`}
+      className={`fixed inset-0 z-[100] backdrop-blur-sm flex items-center justify-center p-4 animate-view-in ${overlayClassName}`}
       onClick={onClose}
     >
       <div className="contents" onClick={(event) => event.stopPropagation()}>
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }
 

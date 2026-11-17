@@ -47,7 +47,7 @@ export default function NewsPage() {
                   <h3 className="text-lg font-bold text-brand-slate mb-2 line-clamp-2 hover:text-brand-crimson transition-colors">
                     {news.title}
                   </h3>
-                  <p className="text-sm text-brand-textMuted line-clamp-3 leading-relaxed mb-4">{news.summary}</p>
+                  <p className="text-sm text-brand-textMuted line-clamp-3 leading-relaxed mb-4 text-justify">{news.summary}</p>
                 </div>
               </div>
               <div className="px-6 pb-6">

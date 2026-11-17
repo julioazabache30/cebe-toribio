@@ -22,7 +22,7 @@ export function Footer() {
                   <span className="block font-serif font-bold text-lg">{SITE.name}</span>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 max-w-md leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 max-w-md leading-relaxed text-justify">
                 Comunidad educativa católica comprometida con la inclusión y desarrollo integral fundamentado en el DUA
                 3.0, adaptaciones Montessori y los valores evangélicos.
               </p>

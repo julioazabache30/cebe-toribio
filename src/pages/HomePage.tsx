@@ -66,7 +66,7 @@ export default function HomePage() {
               </Reveal>
 
               <Reveal variant="fade-up" delay={180}>
-                <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed text-justify">
                   Promovemos la pertenencia, la interdependencia positiva, el crecimiento emocional y la autonomía
                   funcional mediante adaptaciones Montessori, guiando a cada estudiante hacia una vida plena.
                 </p>
@@ -203,7 +203,7 @@ export default function HomePage() {
               <h3 className="text-2xl font-serif font-bold text-brand-slate mb-4">
                 Educación Personalizada y Desarrollo Integral
               </h3>
-              <blockquote className="text-sm text-brand-textMuted leading-relaxed italic border-l-4 border-brand-crimson pl-4">
+              <blockquote className="text-sm text-brand-textMuted leading-relaxed italic text-justify border-l-4 border-brand-crimson pl-4">
                 “{MISSION}”
               </blockquote>
             </article>
@@ -216,7 +216,7 @@ export default function HomePage() {
                 <i className="fa-solid fa-eye" /> Visión Institucional
               </div>
               <h3 className="text-2xl font-serif font-bold mb-4">Faro de Esperanza y Referente Inclusivo Católico</h3>
-              <blockquote className="text-sm text-slate-200 leading-relaxed italic border-l-4 border-brand-crimson pl-4">
+              <blockquote className="text-sm text-slate-200 leading-relaxed italic text-justify border-l-4 border-brand-crimson pl-4">
                 “{VISION}”
               </blockquote>
             </article>
@@ -243,14 +243,14 @@ export default function HomePage() {
               >
                 <div>
                   <div
-                    className={`w-14 h-14 rounded-2xl text-brand-crimson flex items-center justify-center text-2xl mb-6 shadow-sm ${
+                    className={`w-14 h-14 mx-auto rounded-2xl text-brand-crimson flex items-center justify-center text-2xl mb-6 shadow-sm ${
                       index % 2 === 0 ? 'bg-brand-crimsonSoft' : 'bg-brand-slateSoft'
                     }`}
                   >
                     <i className={`fa-solid ${p.icon}`} />
                   </div>
                   <h3 className="text-xl font-bold text-brand-slate mb-3">{p.title}</h3>
-                  <p className="text-brand-textMuted text-sm leading-relaxed mb-6">{p.description}</p>
+                  <p className="text-brand-textMuted text-sm leading-relaxed mb-6 text-justify">{p.description}</p>
                 </div>
                 <div className="pt-4 border-t border-slate-100 text-xs font-semibold text-brand-crimson flex items-center gap-1">
                   <span>{p.tag}</span>
@@ -345,7 +345,7 @@ export default function HomePage() {
                 <h4 className="text-lg font-bold text-brand-slate mb-2 flex items-center gap-2">
                   <i className={`fa-solid ${p.icon} text-brand-crimson`} /> {p.title}
                 </h4>
-                <p className="text-sm text-brand-textMuted leading-relaxed">{p.description}</p>
+                <p className="text-sm text-brand-textMuted leading-relaxed text-justify">{p.description}</p>
               </Reveal>
             ))}
           </div>

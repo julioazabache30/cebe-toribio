@@ -82,7 +82,7 @@ export default function GalleryPage() {
                   <h3 className="font-bold text-brand-slate text-base mt-2 group-hover:text-brand-crimson transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-brand-textMuted mt-1 line-clamp-2">{item.description}</p>
+                  <p className="text-xs text-brand-textMuted mt-1 line-clamp-2 text-justify">{item.description}</p>
                 </div>
               </button>
             </Reveal>
